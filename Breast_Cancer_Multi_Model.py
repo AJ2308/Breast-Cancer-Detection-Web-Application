@@ -17,7 +17,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import precision_score, recall_score
 from sklearn.metrics import confusion_matrix, roc_curve, precision_recall_curve, auc
 
-df = pd.read_csv("C:\\Users\\ADITYA\\Downloads\\archive (6)\\data.csv")
+df = pd.read_csv("data.csv")
 df.drop(columns=['id'], inplace=True)
 
 lb = LabelEncoder()
@@ -38,90 +38,6 @@ if st.sidebar.checkbox("Show X_train/Y_train", False):
             st.dataframe(x_train)
             st.subheader('Y_train')
             st.dataframe(y_train)
-
-# def plot_metrics(metrics_list):
-#         if 'Confusion Matrix' in metrics_list:
-#             st.subheader("Confusion Matrix")
-#             cm = confusion_matrix(y_test, y_pred)
-#             fig,ax = plt.subplots()
-#             sns.heatmap(cm, annot = True)
-#             # plot_confusion_matrix(model, x_test, y_test, display_labels=class_names)
-#             ax.figure.savefig('file.png')
-#             st.pyplot(fig)
-#         if 'Precision-Recall Curve' in metrics_list:
-#             st.subheader('Precision-Recall Curve')
-            
-#             precision, recall, thresholds = precision_recall_curve(y_test, y_pred)
-
-#             fig = px.area(
-#                 x=recall, y=precision,
-#                 title=f'Precision-Recall Curve (AUC={auc(precision, recall):.4f})',
-#                 labels=dict(x='Recall', y='Precision'),
-#                 width=700, height=500
-#                 )
-#             fig.add_shape(
-#                 type='line', line=dict(dash='dash'),
-#                 x0=0, x1=1, y0=1, y1=0
-#                 )
-#             fig.update_yaxes(scaleanchor="x", scaleratio=1)
-#             fig.update_xaxes(constrain='domain')
-#             st.write(fig)
-            
-            
-#         if 'ROC Curve' in metrics_list:
-#             fpr, tpr, thresholds = roc_curve(y_test, y_pred)
-
-#             fig = px.area(
-#                x=fpr, y=tpr,
-#                title=f'ROC Curve (AUC={auc(fpr, tpr):.4f})',
-#                labels=dict(x='False Positive Rate', y='True Positive Rate'),
-#                width=700, height=500
-#                )       
-#             fig.add_shape(
-#                 type='line', line=dict(dash='dash'),
-#                 x0=0, x1=1, y0=0, y1=1
-#                 )
-
-#             fig.update_yaxes(scaleanchor="x", scaleratio=1)
-#             fig.update_xaxes(constrain='domain')
-#             st.write(fig)
-        
-#         if 'Training and Test accuracies' in metrics_list:
-#             mal_train_X = x_train[y_train==0]
-#             mal_train_y = y_train[y_train==0]
-#             ben_train_X = x_train[y_train==1]
-#             ben_train_y = y_train[y_train==1]
-            
-#             mal_test_X = x_test[y_test==0]
-#             mal_test_y = y_test[y_test==0]
-#             ben_test_X = x_test[y_test==1]
-#             ben_test_y = y_test[y_test==1]
-            
-#             scores = [model.score(mal_train_X, mal_train_y), model.score(ben_train_X, ben_train_y), model.score(mal_test_X, mal_test_y), model.score(ben_test_X, ben_test_y)]
-
-#             fig,ax = plt.subplots()
-        
-#     # Plot the scores as a bar chart
-#             bars = plt.bar(np.arange(4), scores, color=['#4c72b0','#4c72b0','#55a868','#55a868'])
-
-#     # directly label the score onto the bars
-#             for bar in bars:
-#                 height = bar.get_height()
-#                 plt.gca().text(bar.get_x() + bar.get_width()/2, height*.90, '{0:.{1}f}'.format(height, 2), ha='center', color='w', fontsize=11)
-
-#     # remove all the ticks (both axes), and tick labels on the Y axis
-#             plt.tick_params(top='off', bottom='off', left='off', right='off', labelleft='off', labelbottom='on')
-
-#     # remove the frame of the chart
-#             for spine in plt.gca().spines.values():
-#                 spine.set_visible(False)
-
-#             plt.xticks([0,1,2,3], ['Malignant\nTraining', 'Benign\nTraining', 'Malignant\nTest', 'Benign\nTest'], alpha=0.8);
-#             plt.title('Training and Test Accuracies for Malignant and Benign Cells', alpha=0.8)
-#             ax.xaxis.set_tick_params(length=0)
-#             ax.yaxis.set_tick_params(length=0)
-#             ax.figure.savefig('file1.png')
-#             st.pyplot(fig)
 
 def multiple_model_page():
    st.title('Breast Cancer Detection')
@@ -147,13 +63,13 @@ def multiple_model_page():
    st.write('Breast Cancer Features')
    st.write(user_inputs)
    
-   benign_image = Image.open("C:\\Users\\ADITYA\\Downloads\\Benign_image.jpg")
-   benign_image1 = Image.open("C:\\Users\\ADITYA\\Downloads\\Benign_image1.jpg")
-   benign_image2 = Image.open("C:\\Users\\ADITYA\\Downloads\\Benign_image.2jpg.jpg")
+   benign_image = Image.open("Benign_image.jpg")
+   benign_image1 = Image.open("Benign_image1.jpg")
+   benign_image2 = Image.open("Benign_image.2jpg.jpg")
 
-   malignant_image = Image.open("C:\\Users\\ADITYA\\Downloads\\Malignant_image.jpg")
-   malignant_image1 = Image.open("C:\\Users\\ADITYA\\Downloads\\Malignant_image.1jpg.jpg")
-   malignant_image2 = Image.open("C:\\Users\\ADITYA\\Downloads\\Malignant_image.2jpg.jpg")
+   malignant_image = Image.open("Malignant_image.jpg")
+   malignant_image1 = Image.open("Malignant_image.1jpg.jpg")
+   malignant_image2 = Image.open("Malignant_image.2jpg.jpg")
 
 
    st.subheader("Choose Classifier")
