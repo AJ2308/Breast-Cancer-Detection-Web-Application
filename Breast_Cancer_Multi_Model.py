@@ -8,7 +8,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 import pickle
 
-df = pd.read_csv("C:\\Users\\ADITYA\\Downloads\\archive (6)\\data.csv")
+df = pd.read_csv("data.csv")
 
 df.drop(columns=['id'], inplace=True)
 
@@ -58,13 +58,13 @@ def prediction():
    st.write('Breast Cancer Features')
    st.write(user_inputs)
 
-   benign_image = Image.open("C:\\Users\\ADITYA\\Downloads\\Benign_image.jpg")
-   benign_image1 = Image.open("C:\\Users\\ADITYA\\Downloads\\Benign_image1.jpg")
-   benign_image2 = Image.open("C:\\Users\\ADITYA\\Downloads\\Benign_image.2jpg.jpg")
+   benign_image = Image.open("Benign_image.jpg")
+   benign_image1 = Image.open("Benign_image1.jpg")
+   benign_image2 = Image.open("Benign_image.2jpg.jpg")
 
-   malignant_image = Image.open("C:\\Users\\ADITYA\\Downloads\\Malignant_image.jpg")
-   malignant_image1 = Image.open("C:\\Users\\ADITYA\\Downloads\\Malignant_image.1jpg.jpg")
-   malignant_image2 = Image.open("C:\\Users\\ADITYA\\Downloads\\Malignant_image.2jpg.jpg")
+   malignant_image = Image.open("Malignant_image.jpg")
+   malignant_image1 = Image.open("Malignant_image.1jpg.jpg")
+   malignant_image2 = Image.open("Malignant_image.2jpg.jpg")
 
    st.header('Prediction')
    st.write('Prediction of diagnosis based on 4 key criteria as determind by data analysis of the Wisconsin Breast Cancer Dataset. Change the Input Parameters in the sidebar to see the diagnosis change.')
