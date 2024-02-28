@@ -29,7 +29,7 @@ def about_page():
     st.subheader("About the Project Maker :")
     st.write("- `Name:` Aditya Jaiswal")
     st.write("- `Qualification:` MBA in Business Analytics & Data Science")
-    self_image = Image.open("C:\\Users\\ADITYA\\OneDrive\\Pictures\\AJ_professional.jpg")
+    self_image = Image.open("AJ_professional.jpg")
     scaled_image = self_image.resize((295,291))
     st.image(scaled_image, caption='Business Analytics & Data Science', use_column_width=True)
     st.write("Aditya's expertise in data science and business analytics drives the development of innovative solutions for healthcare challenges, such as early breast cancer detection.")
