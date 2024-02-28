@@ -7,7 +7,7 @@ import plotly.express as px
 import time
 from sklearn.preprocessing import LabelEncoder
 
-df = pd.read_csv("C:\\Users\\ADITYA\\Downloads\\archive (6)\\data.csv")
+df = pd.read_csv("data.csv")
 df.drop(columns=['id'], inplace=True)
 
 lb = LabelEncoder()
