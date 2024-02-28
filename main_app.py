@@ -10,7 +10,7 @@ from about import about_page
 selected = option_menu(
                 menu_title=None,  # required
                 options=["Home", "Login/Signup", "Patient Info", "Visual Analysis", "Prediction", "Multi-Model Analysis", "About"],  # required
-                icons=["house", "sign-turn-right-fill", "info-circle-fill", "clipboard-data-fill", "search-heart", "code-square", "file-person"],  # optional
+                icons=["house", "sign-turn-right-fill", "info-circle-fill", "clipboard-data-fill", "search-heart-fill", "code-square", "file-person"],  # optional
                 menu_icon="cast",  # optional
                 default_index=0,  # optional
                 orientation="horizontal",
